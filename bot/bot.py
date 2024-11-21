@@ -1,5 +1,5 @@
 from telebot import TeleBot
-from utils.declear import *
+from utils.declear import token, flat_buy_eth, first_deposit, ethereum_price, my_balance_usd, my_balance_ils, get_profit, get_loss
 
 bot = TeleBot(token=token)
 
