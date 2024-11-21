@@ -9,8 +9,8 @@ flat_buy_eth = float(os.getenv('FLAT_BUY_ETH'))
 first_deposit = float(os.getenv('FIRST_DEPOSIT'))
 chat_id = int(os.getenv('CHAT_ID'))
 
-
+ETH = "ethereum"
 # calculate basic data
-ethereum_price = get_crypto_price("ethereum")
+ethereum_price = get_crypto_price(ETH)
 my_balance_usd = flat_buy_eth * ethereum_price[USD]
 my_balance_ils = my_balance_usd * get_dollar_rate()
