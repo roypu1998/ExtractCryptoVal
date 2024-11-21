@@ -21,10 +21,12 @@ def get_crypto_price(crypto_id, currency='usd,ils'):
     return data[crypto_id]
 
 def get_profit(balance, deposit):
-    return f'You profit {deposit - balance}₪ and {(balance - deposit) / get_dollar_rate('ILS')}$'
+    currency = 'ILS'
+    return f'You profit {deposit - balance}₪ and {(balance - deposit) / get_dollar_rate(currency)}$'
 
 def get_loss(balance, deposit):
-    return f'You loss {deposit - balance}₪ and {(deposit - balance) / get_dollar_rate('ILS')}$'
+    currency = 'ILS'
+    return f'You loss {deposit - balance}₪ and {(deposit - balance) / get_dollar_rate(currency)}$'
 
 
 
