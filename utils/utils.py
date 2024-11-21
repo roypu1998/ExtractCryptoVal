@@ -1,4 +1,5 @@
 import requests
+import logging as log
 
 USD = 'usd'
 ILS = 'ils'
@@ -24,7 +25,7 @@ def get_crypto_price(crypto_id, currency='usd,ils'):
     try:
         return data[crypto_id]
     except KeyError:
-        print(data)
+        log.info(data)
         return {"usd": 0, "ils": 0}
 
 def get_profit(balance, deposit):
