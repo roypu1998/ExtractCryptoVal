@@ -11,7 +11,7 @@ def run_bot():
 def run_main():
     print('main start')
     while True:
-        if my_balance_ils > first_deposit:
+        if (my_balance_ils - first_deposit) > 500:
             bot.send_message(chat_id=chat_id, text=f'{get_profit(my_balance_ils, first_deposit)}')
         sleep(5)
 
