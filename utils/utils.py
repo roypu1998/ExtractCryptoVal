@@ -1,6 +1,9 @@
 import requests
 
-def get_dollar_rate(to_currency):
+USD = 'usd'
+ILS = 'ils'
+
+def get_dollar_rate(to_currency='ILS'):
     # URL for the free exchange rate API
     url = "https://open.er-api.com/v6/latest/USD"
     # Send a GET request to the API
@@ -21,12 +24,7 @@ def get_crypto_price(crypto_id, currency='usd,ils'):
     return data[crypto_id]
 
 def get_profit(balance, deposit):
-    currency = 'ILS'
-    return f'You profit {deposit - balance}₪ and {(balance - deposit) / get_dollar_rate(currency)}$'
+    return f'You profit {deposit - balance}₪ and {(balance - deposit) / get_dollar_rate()}$'
 
 def get_loss(balance, deposit):
-    currency = 'ILS'
-    return f'You loss {deposit - balance}₪ and {(deposit - balance) / get_dollar_rate(currency)}$'
-
-
-
+    return f'You loss {deposit - balance}₪ and {(deposit - balance) / get_dollar_rate()}$'
