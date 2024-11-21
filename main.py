@@ -1,4 +1,4 @@
-from utils.declear import *
+from utils.declear import chat_id, my_balance_ils, get_profit, first_deposit
 from bot.bot import run, bot
 from time import sleep
 import threading
