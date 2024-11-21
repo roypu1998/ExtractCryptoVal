@@ -21,7 +21,11 @@ def get_crypto_price(crypto_id, currency='usd,ils'):
     }
     response = requests.get(url, params=params)
     data = response.json()
-    return data[crypto_id]
+    try:
+        return data[crypto_id]
+    except KeyError:
+        print(data)
+        return {"usd": 0, "ils": 0}
 
 def get_profit(balance, deposit):
     return f'You profit {deposit - balance}₪ and {(balance - deposit) / get_dollar_rate()}$'
