@@ -1,7 +1,6 @@
 from telebot import TeleBot
 from utils.declear import token, flat_buy_eth, first_deposit, ethereum_price, my_balance_usd, my_balance_ils, get_profit, get_loss, ILS, USD
-import logging as log
-import threading
+
 
 bot = TeleBot(token=token)
 
@@ -24,10 +23,3 @@ def send_about(msg):
 def send_about(msg):
     bot.send_message(chat_id=msg.chat.id, text="Bot Alive")
 
-
-def run():
-    log.info("bot start")
-    bot.infinity_polling()
-
-thread = threading.Thread(target=run)
-thread.start()
