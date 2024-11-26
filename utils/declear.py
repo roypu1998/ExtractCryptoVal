@@ -8,6 +8,7 @@ token = os.getenv('TOKEN')
 flat_buy_eth = float(os.getenv('FLAT_BUY_ETH'))
 first_deposit = float(os.getenv('FIRST_DEPOSIT'))
 chat_id = int(os.getenv('CHAT_ID'))
+WEBHOOK_URL = os.getenv('WEBHOOK_URL')  # URL שבו הבוט שלך זמין, למשל https://your-app.onrender.com/
 
 ETH = "ethereum"
 # calculate basic data
