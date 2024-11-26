@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return "i'm alive", 200
 
 def run_bot():
     print("bot start")
