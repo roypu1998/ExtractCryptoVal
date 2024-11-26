@@ -1,8 +1,14 @@
 from utils.declear import chat_id, my_balance_ils, get_profit, first_deposit
 from bot.bot import bot
 from time import sleep
+from flask import Flask, render_template
 import threading
 
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 def run_bot():
     print("bot start")
@@ -16,6 +22,7 @@ def run_main():
         sleep(5)
 
 if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
     thread_bot = threading.Thread(target=run_bot)
     sleep(5)
     thread_main = threading.Thread(target=run_main)
